@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.example.springbootelasticsearchrepository.config;
 
 import org.elasticsearch.client.Client;
@@ -14,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;
 import org.springframework.data.elasticsearch.client.RestClients;
 import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfiguration;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.example.springbootelasticsearchrepository.esrepository")
@@ -30,5 +25,4 @@ public class ElasticSearchConfiguration extends AbstractElasticsearchConfigurati
         ClientConfiguration clientconfig = ClientConfiguration.builder().connectedTo("localhost:9200").build();
          return RestClients.create(clientconfig).rest();
     }
-
 }
